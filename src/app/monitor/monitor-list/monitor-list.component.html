@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row row-cols-2">
+    <div class="col p-4" *ngFor="let m of monitores">
+      <div class="card">
+        <div class="row g-0">
+          <div class="col-4">
+            <img src="https://img.freepik.com/free-photo/waist-up-portrait-handsome-serious-unshaven-male-keeps-hands-together-dressed-dark-blue-shirt-has-talk-with-interlocutor-stands-against-white-wall-self-confident-man-freelancer_273609-16320.jpg" class="img-fluid rounded-start">
+          </div>
+          <div class="col-8">
+            <div class="card-body">
+              <h5 class="card-title">{{m.nombre}}</h5>
+              <p class="card-text">
+                <img src="../../../assets/email.png"> {{m.correo}}
+              </p>
+              <p class="card-text">
+                <img src="../../../assets/star.png" *ngFor="let c of [].constructor(m.calificacion)">
+              </p>
+              <div class="d-grid gap-2">
+                <button class="btn btn-outline-info" type="button">Ver más</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

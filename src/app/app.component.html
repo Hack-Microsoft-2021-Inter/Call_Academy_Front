@@ -1,34 +1,50 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand">
       <img src="assets/favicon.png">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <!--ul class="nav navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Item1-Izq</a>
+      <ul class="nav navbar-nav">
+        <li class="nav-item" *ngIf="inicioDeSesionEstudiante()">
+          Estudiante
         </li>
-      </ul-->
-      <ul class="nav navbar-nav ms-auto">
+        <li class="nav-item" *ngIf="inicioDeSesionMonitor()">
+          Monitor
+        </li>
+        <li class="nav-item" *ngIf="!inicioDeSesionEstudiante() && !inicioDeSesionMonitor()">
+          Invitado
+        </li>
+      </ul>
+      <ul class="nav navbar-nav ms-auto" *ngIf="!inicioDeSesionEstudiante() && !inicioDeSesionMonitor()">
         <li class="nav-item">
-          <a class="nav-link" href="#">Inicia sesión</a>
+          <a class="nav-link" href="#">El contexto</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Regístrate</a>
+          <a class="nav-link" href="#">El equipo</a>
         </li>
-        <!--li class="nav-item dropdown">
+        <li class="nav-item">
+          <a class="nav-link" href="#">El futuro</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav ms-auto" *ngIf="inicioDeSesionEstudiante()">
+        <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Item4-Dropdown-Der
+            Monitorías
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a class="dropdown-item" href="#">Ver monitorías grupales</a></li>
+            <li><a class="dropdown-item" href="#">Agendar monitoría individual</a></li>
           </ul>
-        </li-->
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Monitores</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Material de estudio</a>
+        </li>
       </ul>
     </div>
   </div>
